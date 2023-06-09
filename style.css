@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap"); /* Импортировали шрифт с сайта https://fonts.google.com/specimen/Roboto+Condensed и в body указали его (font-famaly) */
+
+/* * {
+  padding: 0;
+  margin: 0;
+} */ /* Если обращаемся к "*", то обнуляем все padding и margin у всех элементов   */
+
+body {
+  background-color: #ffefd5; /* Фоновый цвет сайта  */
+  color: #0f141e;
+
+  font-size: 16px; /* Базовый шрифт для всего сайта */
+  font-weight: normal; /* Жирность шрифта (все что до 500 обычныая жирность шрифта */
+  /* font-family: Arial, Helvetica, sans-serif; Выбираем шрифт для проекта (если Arial не будет работать то будет подключаться Helvetica) */
+  font-family: "Roboto Condensed", sans-serif;
+
+  /* font: normal 16px "Roboto Condensed", sans-serif; (Можно прописать все для шрифтов в одной строчке) */
+
+  /* Чтобы точечно обращаться к объекту и изменить только его - в теге нужно указать class и обращаться к нему */
+  /* Можно записать через id, разница в том что id должно быть уникальным, а классы могут повторяться. Для стилистики обычно используют class, но если все-таки мы работаем с id, то вместо точки (.avatar) ставим # */
+  /* В данном случае мы задаем стиль для фотографии */
+}
+a {
+  color: black; /* Цвет ссылки  */
+  text-decoration: none; /* Добавление подчеркивания по умолчанию  */
+}
+
+a:hover {
+  text-decoration: underline; /*  Стилистика при наведении */
+} /* Псевдо класс (задает состояние селектору, при наведении)  */
+
+a:active {
+  color: blue; /* Цвет при нажатии  */
+} /*  Псевдо класс (задает состояние селектору, при нажатии) */
+
+.avatar {
+  width: 200px; /* Ширина картинки */
+  border-radius: 28px; /* Округление картинки */
+  box-shadow: 10px 9px 14px rgba(0, 0, 0, 0.25); /* Можно нажать inspect на Аватаре на сайте и поиграться с тенью в фиолетовом квадрате */
+}
+
+.info {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+  .info {
+    text-align: center; /* Текст по центру */
+    display: block;
+  }
+} /* Описываем правила которые будут работать на ширине до 700px (текст уходит вниз при сужении сайта (для мобильных устройств))*/
+
+.info-text {
+  margin-left: 40px;
+}
+
+.info-text h4 {
+  margin-bottom: 10px;
+}
+
+a:visited {
+  color: green;
+} /* Псевдо класс (задает состояние селектору, после посещения ссылки она отображается зеленым)  */
+
+.info p {
+  color: #86898f;
+  margin: 0; /* Отступы их можно увидеть проинспектировав выделенное слово из параграфа */
+  font-style: italic; /* Наклонный текст */
+  font-weight: bold; /* Ширина шрифта или жирность */
+  text-decoration: none; /* Нижнее подчеркивание (underline) */
+  /* text-transform: uppercase;  Для каждой заглавной буквы (capitalize) */
+  /* letter-spacing: 15px; Количесвто пикселей между каждым символом */
+  /* word-spacing: 42px; Количество пространства между разными словами */
+  /* p - после .info означает, что правила будут применяться для всех вложенных параграфов включая те, которые находятся внутри, если я хочу чтобы применялось только для вложенных (для детей) то тогда нужно поставить впереди знак > p */
+}
+
+.container {
+  max-width: 750px;
+  margin: auto; /* Сделали сайт по средине */
+  padding-top: 30px;
+}
+
+.bg-yellow {
+  background-color: #fff9dc;
+}
+
+.bg-green {
+  background-color: #e5ffe7;
+}
+
+.bg-red {
+  background-color: #ffe5e5;
+}
+
+.card {
+  padding: 15px 20px;
+  margin-bottom: 20px; /*  Можно пользоваться чтобы видеть блоки (очень полезно) */
+  border-radius: 20px;
+}
+
+.card h2 {
+  margin-bottom: 10px;
+}
+
+.list {
+  padding: 0 20px;
+  /* list-style: none; Можем убрать цифры */
+}
+
+.list li {
+  color: #86898f;
+  margin-bottom: 10px;
+  /* border-bottom: 1px solid green; (Линия подчеркивающая предложение) */
+}
+
+.table {
+  width: 100%; /* Ширина таблицы на всю страницу */
+}
+
+.table td {
+  padding-bottom: 10px;
+}
+
+.table td:nth-child(2),
+.table td:nth-child(3) {
+  color: goldenrod;
+} /* Тут мы не создаем классы в каждом теге чтобы изменить стиль, а обращаемся к детям и говорим что нужно изменить именно 2 и 3 столбцы. */
+
+/* .table tr:nth-child(even) {
+  background: red;
+} (Каждая четная (even) строчка подчеркнута, если передать odd, то будет наоборот, нечетные) */
+
+.link-list {
+  list-style: none; /* Стиль для списка (если выбрать square то будут квадратики) */
+  padding: 0;
+}
+
+.link-list li {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ccc;
+}
+.contact h2 {
+  text-align: center; /* Задаем расположение заголовку по центру */
+}
+
+.form-group label {
+  display: block; /* Каждый из display блоков будет находится на отдельной строчке */
+  font-size: 14px;
+  color: brown;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* Ширина во всю страницу */
+  box-sizing: border-box;
+  border: none; /* Убираем границу */
+  background: transparent;
+  border-bottom: 1px solid #ccc; /* Задаем нижнюю границу вручную */
+  color: #000;
+  padding: 15px 0 10px;
+  outline: none; /* Убирает синюю рамку при нажатии в input */
+  font-family: inherit; /* Наследование главного шрифта который мы используем */
+}
+
+.row {
+  display: flex; /* Строки для ввода (Имя и фамилии будут на одно	 стрчке) */
+  margin-bottom: 20px;
+}
+
+.row > .form-group {
+  width: 50%; /* Ширина form-group 50%, так как мы обращаемся только к детям ">" */
+  margin-right: 20px;
+}
+
+.row > .form-group:last-child {
+  margin-right: 0;
+}
+
+.btn {
+  background: #111;
+  padding: 15px 20px;
+  color: white;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9; /* При наведении меняется состояние кнопки (немного бледнеет) */
+}
+
+/* Position */
+
+/* .position {
+  position: relative;
+  border: 4px solid black;
+  margin-top: 40px;
+  padding: 20px;
+  height: 300px;
+}
+
+.box {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  background: lightcoral;
+} */
+
+/* Box Model */
+
+/* .social {
+  background: red;
+  padding: 15px; /* Внутренние отступы в самом блоке (От края блока до контента). Можно указывать два значения 15 и 20, тогда верх и низ будет по 15, лево и право по 20. Или указать все 4 стороны, тогда размеры будут применяться по часовой стрелке. */
+/* border: 5px dotted red; /* Граница к бордеру (ширина, стиль, цвет) */
+/* margin: 20px; /* Внешние отступы 
+}
+
+/* .box-model div {
+  float: left; /* Чтобы блоки встали в ряд */
+/* background: #000;
+  height: 200px;
+  border: solid red;
+  width: 25%;
+  box-sizing: border-box; /* Размер бокса с учетом bordera, чтобы не перескакивал вниз а оставался в одну линию 
+} */ /* div - после .box-model означает, что правила будут применяться для всех вложенных параграфов включая те, которые находятся внутри, если я хочу чтобы применялось только для вложенных (для детей) то тогда нужно поставить впереди знак > div */
